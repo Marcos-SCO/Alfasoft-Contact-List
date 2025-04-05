@@ -28,6 +28,6 @@ class DatabaseSeeder extends Seeder
             ['name' => 'Marcos', 'password' => Hash::make('password')]
         );
 
-        Contact::factory()->count(20)->create();
+        Contact::factory()->count(50)->create();
     }
 }
