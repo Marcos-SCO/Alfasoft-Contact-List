@@ -18,6 +18,20 @@
     <nav class="text-center pt-3 pb-2">
       <a href="{{ route('contacts.index') }}" class="btn btn-light me-2 py-2 px-4">{{ __('List Contacts') }}</a>
       <a href="{{ route('contacts.create') }}" class="btn btn-light py-2 px-4">+{{ __('Add Contact') }}</a>
+
+      @if(auth()->check())
+      <div class="text-center mb-3">
+        <span class="me-3">{{ auth()->user()->name }}</span>
+
+        <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+          @csrf
+          <button type="submit" class="btn btn-outline-light btn-sm">
+            {{ __('Exit') }}
+          </button>
+        </form>
+      </div>
+      @endif
+      
     </nav>
   </header>
 
