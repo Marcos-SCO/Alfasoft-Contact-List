@@ -31,7 +31,8 @@ class ContactController extends Controller
 
         Contact::create($validated);
 
-        return redirect()->route('contacts.index');
+        return redirect()->route('contacts.index')
+            ->with('success', 'Contract added successfully!');
     }
 
     public function show(Contact $contact)
@@ -56,13 +57,16 @@ class ContactController extends Controller
         ]);
 
         $contact->update($validated);
-        return redirect()->route('contacts.index');
+
+        return redirect()->route('contacts.index')
+            ->with('success', 'Contract updated successfully!');;
     }
 
     public function destroy(Contact $contact)
     {
         $contact->delete();
 
-        return redirect()->route('contacts.index');
+        return redirect()->route('contacts.index')
+            ->with('success', 'Contract was removed successfully!');
     }
 }

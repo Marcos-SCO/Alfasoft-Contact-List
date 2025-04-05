@@ -22,7 +22,7 @@
 
       <div class="session-controls-container d-flex justify-content-end align-items-center position-absolute top-0 end-0 mt-3 me-3">
         @auth
-        
+
         <div class="auth-username me-3 d-flex align-center">
           <span>{!! SvgHelper::getSvg('user_icon', 'svg') !!}</span> <span>{{ auth()->user()->name }}</span>
         </div>
@@ -47,6 +47,30 @@
   </header>
 
   <main class="main-container container mt-4 mb-5">
+
+
+    @if (session('success'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert" data-js="success-alert">
+      {{ session('success') }}
+      <button type="button" class="btn-close" aria-label="Close"></button>
+    </div>
+    
+    <script>
+
+      function successMessage() {
+
+        const alertBox = document.querySelector('[data-js="success-alert"]');
+        if (!alertBox) return;
+
+        const closeButton = alertBox.querySelector('.btn-close');
+
+        closeButton.addEventListener('click', function() {
+          alertBox.classList.add('hide-element');
+        });
+      }
+      successMessage();
+    </script>
+    @endif
 
     @yield('content')
   </main>
