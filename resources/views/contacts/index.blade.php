@@ -3,9 +3,9 @@
 @section('content')
 
 <div class="container">
-  <h1 class="mb-4">{{ __("Contacts") }}</h1>
+  <h3 class="mb-4">{{ __("Contacts") }}</h3>
 
-  <a href="{{ route('contact.create') }}" class="btn pink-button-color mb-4" title="{{ __('Add a new contact') }}">+ {{ __('new contact') }}</a>
+  <a href="{{ route('contact.create') }}" class="btn blue-button-color mb-4" title="{{ __('Add a new contact') }}">+ {{ __('new contact') }}</a>
 
   <div class="list-container">
     <ul class="list-group">
@@ -51,16 +51,19 @@
           </a>
         </div>
 
+        @auth
         <div class="list-action d-flex gap-2">
-          <a href="{{ route('contacts.edit', $contact->id) }}" class="btn btn-warning btn-sm d-flex align-items-center" title="{{ __('Edit') }}">{{ __('Edit') }}r</a>
+          <a href="{{ route('contact.edit', $contact->id) }}" class="btn btn-warning btn-sm d-flex align-items-center" title="{{ __('Edit') }}">{{ __('Edit') }}</a>
 
           <form action="{{ route('contacts.destroy', $contact->id) }}" method="POST" onsubmit="return confirm('{{ __('Are you sure, want to remove this contact?') }}');">
             @csrf
             @method('DELETE')
-            <button type="submit" class="btn btn-danger">Remove</button>
+            <button type="submit" class="btn btn-danger">{{ __('Remove') }}</button>
           </form>
 
         </div>
+        @endauth
+
       </li>
       @endforeach
     </ul>

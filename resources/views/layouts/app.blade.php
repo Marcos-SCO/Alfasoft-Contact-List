@@ -11,28 +11,39 @@
 </head>
 
 <body>
-  <header class="page-header py-5 text-white">
+  @php
 
-    <h1 class="text-center">{{ __('Alfasoft Contacts') }}</h1>
+  use \App\Helpers\Classes\SvgHelper;
 
-    <nav class="text-center pt-3 pb-2">
-      <a href="{{ route('contacts.index') }}" class="btn btn-light me-2 py-2 px-4">{{ __('List Contacts') }}</a>
-      <a href="{{ route('contact.create') }}" class="btn btn-light py-2 px-4">+{{ __('Add Contact') }}</a>
+  @endphp
+  <header class="page-header py-4 text-white bg-dark position-relative">
 
-      @if(auth()->check())
-      <div class="text-center mb-3">
-        <span class="me-3">{{ auth()->user()->name }}</span>
+    <div class="container position-relative">
 
-        <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+      <div class="session-controls-container d-flex justify-content-end align-items-center position-absolute top-0 end-0 mt-3 me-3">
+        @auth
+        
+        <div class="auth-username me-3 d-flex align-center">
+          <span>{!! SvgHelper::getSvg('user_icon', 'svg') !!}</span> <span>{{ auth()->user()->name }}</span>
+        </div>
+
+        <form action="{{ route('logout') }}" method="POST" class="d-inline">
           @csrf
-          <button type="submit" class="btn btn-outline-light btn-sm">
-            {{ __('Exit') }}
-          </button>
+          <button type="submit" class="btn btn-outline-light btn-sm">{{ __('Logout') }}</button>
         </form>
-      </div>
-      @endif
 
-    </nav>
+        @else
+        <a href="{{ route('login') }}" class="btn btn-outline-light btn-sm">{{ __('Login') }}</a>
+        @endauth
+      </div>
+
+      <h1 class="text-center mb-4">{{ __('Alfasoft Contacts') }}</h1>
+
+      <nav class="d-flex justify-content-center gap-3 pt-2">
+        <a href="{{ route('contacts.index') }}" class="btn btn-light py-2 px-4">{{ __('List Contacts') }}</a>
+        <a href="{{ route('contact.create') }}" class="btn btn-light py-2 px-4">+{{ __('Add Contact') }}</a>
+      </nav>
+    </div>
   </header>
 
   <main class="main-container container mt-4 mb-5">

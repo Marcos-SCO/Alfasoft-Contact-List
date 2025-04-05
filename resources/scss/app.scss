@@ -1,2 +1,6 @@
 @forward 'bootstrap/dist/css/bootstrap.min.css';
 @forward './_bootstrapRewrites.scss';
+
+@forward './components/pagination';
+
+@forward './geral';

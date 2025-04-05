@@ -1,0 +1,60 @@
+
+@use "../variables" as *;
+
+.pagination-container {
+
+    .page-item {
+        margin: .4rem;
+    }
+
+    .page-link {
+        font-size: .9rem;
+        color: $primary;
+
+        padding: .5rem 1rem;
+
+        &:hover,
+        &:focus,
+        &.active {
+            color: #fff;
+            background-color: $primary;
+            border-color: $primary;
+            outline: none;
+        }
+
+        &:focus {
+            box-shadow: 0 0 0 0.2rem rgba(1, 92, 148, 0.5);
+        }
+    }
+
+    .page-link {
+        &:hover {
+        }
+    }
+
+    span.page-link {
+        cursor: not-allowed;
+        color: #fff;
+        background-color: $primary;
+
+        &:hover {
+            // background-color: #fff;
+            // color: $primary;
+        }
+    }
+
+    .page-item.active {
+        .page-link {
+            border-color: $primary;
+        }
+    }
+
+    .page-item.disabled {
+        cursor: not-allowed;
+
+        .page-link {
+            color: $primary;
+            background-color: transparent;
+        }
+    }
+}

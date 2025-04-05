@@ -6,7 +6,7 @@
         <div class="col-md-6">
 
             <h3 class="mb-4">Login</h3>
-            
+
             <form method="POST" action="{{ route('login') }}">
                 @csrf
 
@@ -40,7 +40,7 @@
                     <label class="form-check-label" for="remember">Remember Me</label>
                 </div>
 
-                <button type="submit" class="btn btn-primary w-100">Login</button>
+                <button type="submit" class="btn login-btn blue-button-color mt-4">{{ __("Login") }}</button>
 
             </form>
         </div>
