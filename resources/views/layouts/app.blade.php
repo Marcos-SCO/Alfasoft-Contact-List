@@ -49,15 +49,15 @@
 
   <main class="main-container container mt-4 mb-5">
 
+    <div data-js="loader" class="loader">{{ __('Loading') }}...</div>
 
     @if (session('success'))
     <div class="alert alert-success alert-dismissible fade show" role="alert" data-js="success-alert">
       {{ session('success') }}
       <button type="button" class="btn-close" aria-label="Close"></button>
     </div>
-    
-    <script>
 
+    <script>
       function successMessage() {
 
         const alertBox = document.querySelector('[data-js="success-alert"]');
