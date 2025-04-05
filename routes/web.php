@@ -25,8 +25,8 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/contacts/{contact}', [ContactController::class, 'show'])->name('contacts.show');
 
 Route::middleware('auth')->group(function () {
-
-    Route::get('/contacts/create', [ContactController::class, 'create'])->name('contacts.create');
+    
+    Route::get('/contact/create', [ContactController::class, 'create'])->name('contact.create');
 
     Route::post('/contacts', [ContactController::class, 'store'])->name('contacts.store');
 

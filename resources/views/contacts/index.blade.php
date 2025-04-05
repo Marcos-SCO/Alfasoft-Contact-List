@@ -5,7 +5,7 @@
 <div class="container">
   <h1 class="mb-4">{{ __("Contacts") }}</h1>
 
-  <a href="{{ route('contacts.create') }}" class="btn pink-button-color mb-4" title="{{ __('Add a new contact') }}">+ {{ __('new contact') }}</a>
+  <a href="{{ route('contact.create') }}" class="btn pink-button-color mb-4" title="{{ __('Add a new contact') }}">+ {{ __('new contact') }}</a>
 
   <div class="list-container">
     <ul class="list-group">
