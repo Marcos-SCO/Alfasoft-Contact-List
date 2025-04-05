@@ -7,18 +7,20 @@ name: 🚀 Deploy website on push
 
 jobs:
   web-deploy:
-    name: 🎉 Deploy
+    name: 🎉 Deploy via SFTP
     environment: Alfasoft
     runs-on: ubuntu-latest
+
     steps:
       - name: 🚚 Get latest code
         uses: actions/checkout@v2
 
-      - name: 📂 Sync files via SFTP
-        uses: SamKirkland/FTP-Deploy-Action@4.1.0
+      - name: 📂 Upload files via SFTP
+        uses: appleboy/scp-action@v0.1.4
         with:
-          server: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          protocol: sftp
-          server-dir: /home/marcoscarvalho-l/html
+          host: ${{ secrets.SFTP_HOST }}
+          username: ${{ secrets.SFTP_USERNAME }}
+          password: ${{ secrets.SFTP_PASSWORD }}
+          port: 22
+          source: "./*"
+          target: "/home/marcoscarvalho-l/html/"
