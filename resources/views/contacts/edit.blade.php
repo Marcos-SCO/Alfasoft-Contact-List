@@ -42,7 +42,7 @@
             </div>
         </div>
 
-        <button type="submit" class="btn pink-button-color mt-4">{{ __("Salve Changes") }}</button>
+        <button type="submit" class="btn pink-button-color mt-4">{{ __("Save Changes") }}</button>
     </form>
 </div>
 
