@@ -27,8 +27,10 @@
         </div>
     </div>
 
-    <div class="mt-4">
+    <div class="mt-4" hx-boost="true" hx-target="main" hx-select="main" hx-swap="outerHTML" hx-push-url="true">
+        @auth
         <a href="{{ route('contact.edit', $contact->id) }}" class="btn btn-warning me-2">{{ __("Edit Contact") }}</a>
+        @endauth
         <a href="{{ route('contacts.index') }}" class="btn btn-secondary">{{ __("Back to List") }}</a>
     </div>
 

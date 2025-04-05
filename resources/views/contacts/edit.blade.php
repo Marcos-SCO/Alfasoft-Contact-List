@@ -5,7 +5,7 @@
 <div class="container mt-5 col-12 col-lg-8">
     <h3 class="mb-4">{{ __("Edit Contact") }}</h3>
 
-    <form action="{{ route('contacts.update', $contact->id) }}" method="POST" class="mb-4 content-form">
+    <form action="{{ route('contacts.update', $contact->id) }}" method="POST" class="mb-4 content-form" hx-post="{{ route('contacts.update', $contact->id) }}" hx-boost="true" hx-target="main" hx-select="main" hx-push-url="true">
 
         @csrf
         @method('PUT')

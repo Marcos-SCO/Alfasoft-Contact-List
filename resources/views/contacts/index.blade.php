@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container">
+<div class="container" hx-boost="true" hx-target="main" hx-select="main" hx-swap="outerHTML" hx-push-url="true">
   <h3 class="mb-4">{{ __("Contacts") }}</h3>
 
   <a href="{{ route('contact.create') }}" class="btn blue-button-color mb-4" title="{{ __('Add a new contact') }}">+ {{ __('new contact') }}</a>

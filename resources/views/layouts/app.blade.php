@@ -8,6 +8,7 @@
 
   @vite(['resources/css/app.css', 'resources/scss/app.scss', 'resources/js/app.js'])
 
+  <script src="https://unpkg.com/htmx.org@1.8.4" integrity="sha384-H6m3NUDF59KD7C93qC5VR6WhZq94bD6E4e6tvDCEkbCbTtZjNe3G89aSkcvZw2cz" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -16,7 +17,7 @@
   use \App\Helpers\Classes\SvgHelper;
 
   @endphp
-  <header class="page-header py-4 text-white bg-dark position-relative">
+  <header class="page-header py-4 text-white bg-dark position-relative" hx-boost="true" hx-target="main" hx-select="main" hx-swap="outerHTML" hx-push-url="true">
 
     <div class="container position-relative">
 

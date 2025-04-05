@@ -6,7 +6,7 @@
 
     <h3 class="mb-4">+ {{ __("New Contact") }}</h3>
 
-    <form action="{{ route('contacts.store') }}" method="POST" class="mb-4 content-form">
+    <form action="{{ route('contacts.store') }}" method="POST" class="mb-4 content-form" hx-boost="true" hx-post="{{ route('contacts.store') }}" hx-boost="true" hx-target="main" hx-select="main" hx-push-url="true">
         @csrf
 
         <div class="row mb-3">
