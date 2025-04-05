@@ -8,6 +8,7 @@ name: 🚀 Deploy website on push
 jobs:
   web-deploy:
     name: 🎉 Deploy
+    environment: Alfasoft
     runs-on: ubuntu-latest
     steps:
       - name: 🚚 Get latest code
