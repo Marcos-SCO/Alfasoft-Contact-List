@@ -35,7 +35,7 @@
 
         <div class="w-100">
 
-          <a href="{{ route('contacts.edit', $contact->id) }}" class="text-decoration-none" title="Edit">
+          <a href="{{ route('contacts.show', $contact->id) }}" class="text-decoration-none" title="See contact">
 
             <div class="item-info-container d-flex justify-content-between py-4">
 
