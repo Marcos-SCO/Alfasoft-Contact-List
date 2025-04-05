@@ -1,3 +1,2 @@
-body {
-    background-color: orange;
-}
+@forward 'bootstrap/dist/css/bootstrap.min.css';
+@forward './_bootstrapRewrites.scss';

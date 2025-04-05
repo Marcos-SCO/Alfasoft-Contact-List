@@ -1,0 +1,26 @@
+// Base color and shadow settings
+$shadow-color: #32b4e4;
+
+.shadow-sm {
+    box-shadow: 0 .125rem .25rem $shadow-color !important;
+}
+
+.shadow {
+    box-shadow: 0 .5rem 1rem $shadow-color !important;
+}
+
+.shadow-lg {
+    box-shadow: 0 1rem 3rem $shadow-color !important;
+}
+
+.form-select:focus,
+.form-control:focus {
+  border-color: #0071a8!important;
+}
+
+.content-form {
+    .form-select:focus,
+    .form-control:focus {
+        box-shadow: 0 0 0 0.2rem $shadow-color!important;
+    }
+}
