@@ -24,7 +24,7 @@ class ContactController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required|min:6',
-            'contact' => 'required|digits:9|unique:contacts',
+            'contact' => 'required|numeric|digits:9|unique:contacts',
             'email' => 'required|email|unique:contacts',
         ]);
 
@@ -50,7 +50,7 @@ class ContactController extends Controller
 
         $validated = $request->validate([
             'name' => 'required|min:6',
-            'contact' => ['required', 'digits:9', Rule::unique('contacts')->ignore($contact->id)],
+            'contact' => ['required', 'numeric', 'digits:9', Rule::unique('contacts')->ignore($contact->id)],
             'email' => ['required', 'email', Rule::unique('contacts')->ignore($contact->id)],
         ]);
 
