@@ -20,7 +20,8 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials, $request->filled('remember'))) {
 
-            return redirect()->intended('/');
+            return redirect()->intended('/')
+                ->with('success', 'You signing successfully!');
         }
 
         return back()->withErrors(['email' => 'Invalid credentials',])->onlyInput('email');
@@ -31,6 +32,8 @@ class LoginController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect('/');
+        
+        return redirect('/')
+            ->with('success', 'You Logout successfully!');;
     }
 }
