@@ -28,7 +28,7 @@
           <span>{!! SvgHelper::getSvg('user_icon', 'svg') !!}</span> <span>{{ auth()->user()->name }}</span>
         </div>
 
-        <form action="{{ route('logout') }}" method="POST" class="d-inline">
+        <form action="{{ route('logout') }}" method="POST" class="d-inline" hx-boost="false">
           @csrf
           <button type="submit" class="btn btn-outline-light btn-sm">{{ __('Logout') }}</button>
         </form>
