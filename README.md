@@ -1,9 +1,9 @@
 # Alfasoft-Contact-List
 A contact list crud application
 
-Technical challenge project developed and provided by Alfasoft
+Technical challenge project provided by Alfasoft
 
-<p>Available at: <a href="https://marcoscarvalho-l.recruitment.alfasoft.pt/cloudcmd" target="_blank">https://marcoscarvalho-l.recruitment.alfasoft.pt/cloudcmd</a></p>
+<p>Available at: <a href="http://marcos-alfasoft-test.x10.mx/" target="_blank">http://marcos-alfasoft-test.x10.mx/</a></p>
 
 ### Technologies Used 💻
 
@@ -45,13 +45,13 @@ npm install
 npm run build
 ```
 
-## How to Use Locally  🛠️
+## How to Use  🛠️
 
 1. Navigate to the directory where the files are located.
 
 2. Make sure your application is properly structured, including all necessary files such as `package.json`, `src`  and others as expected by the Dockerfile and docker-compose.yml..
 
-3. rom the project root, run the following command to build and start the Docker containers:
+3. From the project root, run the following command to build and start the Docker containers:
 
     ```
     docker-compose up -d --build
@@ -63,7 +63,7 @@ Make sure to adjust the configurations according to your application's specific 
 From the root directory (outside the expense-app folder), run the command to access the container:
 
 ```bash
-docker-compose exec -it web bash
+docker-compose exec -it web sh
 ```
 
 ```bash
